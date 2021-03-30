@@ -1,6 +1,8 @@
 <?php 
   include  $_SERVER['DOCUMENT_ROOT'] . '/task.manager/includes/const.php';
   include $_SERVER['DOCUMENT_ROOT'] . '/task.manager/includes/main_menu.php';
+  $pageItemKey = array_search($URL, array_column($menuArr, 'path') );
+  $pageTitle = $menuArr[$pageItemKey]['title'];
 ?>
 <!DOCTYPE html>
 <html>

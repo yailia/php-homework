@@ -2,23 +2,23 @@
 
 $menuArr = $footerArr = [
     [
-        'title' => 'Главная',
-        'path' => '/task.manager',
+        'title' => 'Главнаяdsafdfgsfgsfghf',
+        'path' => '/task.manager/',
         'sort' => '10'
     ],
     [
         'title' => 'О Нас',
-        'path' => '/task.manager/route/about',
+        'path' => '/task.manager/route/about/',
         'sort' => '20'
     ],
     [
         'title' => 'Новости',
-        'path' => '/task.manager/route/news',
+        'path' => '/task.manager/route/news/',
         'sort' => '40'
     ],
     [
         'title' => 'Контакты',
-        'path' => '/task.manager/route/contacts',
+        'path' => '/task.manager/route/contacts/',
         'sort' => '30'
     ],
     [
@@ -28,7 +28,7 @@ $menuArr = $footerArr = [
     ],
     [
         'title' => 'Каталог',
-        'path' => '/task.manager/route/catalogue',
+        'path' => '/task.manager/route/catalogue/',
         'sort' => '50'
     ],
 ];
@@ -53,6 +53,27 @@ function arraySort(array $array, $key = 'sort', $sort = SORT_ASC): array
 $headerMenuArr = arraySort($menuArr, 'sort');
 $footerMenuArr = arraySort($footerArr, 'title', SORT_DESC);
 
+/**
+ * возвращает название активного класса, если url совпадает
+ * @param string проверяемый url
+ * @return string
+ */
+function isMenuActive ($uri) {
+    return $_SERVER['REQUEST_URI'] === $uri ? 'menu-active' : '';
+}
+
+/**
+ * если длина строки больше 12 символов, то возвращает сокращенную строку с ...
+ * @param string проверяемая строка
+ * @param int максимальное количество символов
+ * @param string суффикс
+ * @return string обрезанная строка
+ */
+function cutString($line, $length = 12, $appends = '...'): string
+{   
+    return strlen($line) > $length ? mb_strimwidth($line, 0, $length, $appends) : $line;
+}
+
 
 /**
  * Выводит меню по параметру сортировки
@@ -62,6 +83,16 @@ $footerMenuArr = arraySort($footerArr, 'title', SORT_DESC);
 function showMenu (array $arr = [])
 {
     foreach($arr as $item) {
-        ?><li><a href="<?= $item['path'] ?>"><?= $item['title']?></a></li><?php
+        ?>
+        <li>
+            <a 
+            class = "<?=isMenuActive($item['path']) ?>"
+            href="<?= $item['path'] ?>">
+            <?= cutstring($item['title']) ?></a>
+        </li>
+        <?php
     };
 };
+
+
+

@@ -33,6 +33,10 @@ a:hover {
     text-decoration: underline;
 }
 
+a.menu-active {
+    text-decoration: underline !important;
+}
+
 .header {
     padding: 0;
     margin: 0 0 10px 0;
