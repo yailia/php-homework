@@ -3,7 +3,7 @@
 $menuArr = $footerArr = [
     [
         'title' => 'Главнаяdsafdfgsfgsfghf',
-        'path' => '/task.manager/',
+        'path' => '/',
         'sort' => '10'
     ],
     [

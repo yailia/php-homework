@@ -9,13 +9,13 @@ $password = 'admin';
 $loginMsg = '';
 
 
-if ($_GET['login'] === 'yes') {
+if (isset($_GET['login']) === 'yes') {
     $display = 'display-tCell';
 } else {
     $display = '';
 }
 
-if ( isset($_POST['login']) || isset($_POST['password'])) {
+if (isset($_POST['login']) || isset($_POST['password'])) {
     if ($_POST["login"] === $login && $_POST["password"] === $password) {
         $loginMsg = $succsessMsg;
     } else {
