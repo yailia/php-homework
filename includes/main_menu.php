@@ -1,34 +1,33 @@
 <?php
-
 $menuArr = $footerArr = [
     [
-        'title' => 'Главнаяdsafdfgsfgsfghf',
+        'title' => 'Главная',
         'path' => '/',
         'sort' => '10'
     ],
     [
         'title' => 'О Нас',
-        'path' => '/task.manager/route/about/',
+        'path' => '/route/about/',
         'sort' => '20'
     ],
     [
         'title' => 'Новости',
-        'path' => '/task.manager/route/news/',
+        'path' => '/route/news/',
         'sort' => '40'
     ],
     [
         'title' => 'Контакты',
-        'path' => '/task.manager/route/contacts/',
+        'path' => '/route/contacts/',
         'sort' => '30'
     ],
     [
         'title' => 'Войти',
-        'path' => '/task.manager/?login=yes',
+        'path' => '/?login=yes',
         'sort' => '60'
     ],
     [
         'title' => 'Каталог',
-        'path' => '/task.manager/route/catalogue/',
+        'path' => '/route/catalogue/',
         'sort' => '50'
     ],
 ];

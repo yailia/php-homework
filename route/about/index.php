@@ -1,5 +1,5 @@
 <?php
-include 'templates/header.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php';
 ?>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
     	<tbody><tr>
@@ -11,4 +11,4 @@ include 'templates/header.php';
     </tbody></table>
 
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/task.manager/templates/footer.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php';

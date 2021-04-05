@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/includes/success.php';
+include './templates/header.php';
 
 $display = '';
 $wrongPass = '';
@@ -9,7 +9,7 @@ $password = 'admin';
 $loginMsg = '';
 
 
-if (isset($_GET['login']) === 'yes') {
+if (isset($_GET['login']) && $_GET['login'] === 'yes') {
     $display = 'display-tCell';
 } else {
     $display = '';
@@ -24,7 +24,6 @@ if (isset($_POST['login']) || isset($_POST['password'])) {
         $loginMsg = "Неверный логин или пароль";
     }
 }
-include $_SERVER['DOCUMENT_ROOT'] . '/task.manager/templates/header.php';
 ?>
 	<table width="100%" border="0" cellspacing="0" cellpadding="0">
     	<tr>
@@ -75,4 +74,4 @@ include $_SERVER['DOCUMENT_ROOT'] . '/task.manager/templates/header.php';
         </tr>
     </table>
 
-<? include $_SERVER['DOCUMENT_ROOT'] . '/task.manager/templates/footer.php';
+<? include './templates/footer.php';
