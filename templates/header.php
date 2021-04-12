@@ -2,6 +2,8 @@
   include $_SERVER['DOCUMENT_ROOT'] . './includes/const.php';
   include $_SERVER['DOCUMENT_ROOT'] . './includes/main_menu.php';
   include $_SERVER['DOCUMENT_ROOT'] . './includes/success.php';
+  include $_SERVER['DOCUMENT_ROOT'] . './includes/auth.php';
+  include $_SERVER['DOCUMENT_ROOT'] . './includes/functions.php';
   $pageItemKey = array_search($URL, array_column($menuArr, 'path') );
   $pageTitle = $menuArr[$pageItemKey]['title'];
 
@@ -22,8 +24,6 @@
     </div>
 
     <div class="clear">
-        <ul class="main-menu">
-          <?= showMenu($headerMenuArr) ?>
-        </ul>
+        <? include $_SERVER['DOCUMENT_ROOT'] . './templates/menu.php'; ?>
     </div>
 

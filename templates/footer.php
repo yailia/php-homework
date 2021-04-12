@@ -1,6 +1,6 @@
 <div class="clearfix">
         <ul class="main-menu bottom">
-        <?= showMenu($footerMenuArr) ?>
+        <? include $_SERVER['DOCUMENT_ROOT'] . './templates/menu.php'; ?>
         </ul>
     </div>
 

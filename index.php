@@ -1,29 +1,5 @@
 <?php
-include './templates/header.php';
-
-$display = '';
-$wrongPass = '';
-$wrongLogin = '';
-$login = 'admin';
-$password = 'admin';
-$loginMsg = '';
-
-
-if (isset($_GET['login']) && $_GET['login'] === 'yes') {
-    $display = 'display-tCell';
-} else {
-    $display = '';
-}
-
-if (isset($_POST['login']) || isset($_POST['password'])) {
-    if ($_POST["login"] === $login && $_POST["password"] === $password) {
-        $loginMsg = $succsessMsg;
-    } else {
-        $wrongLogin = $_POST['login'];
-        $wrongPass = $_POST['password'];
-        $loginMsg = "Неверный логин или пароль";
-    }
-}
+include $_SERVER['DOCUMENT_ROOT'] . './templates/header.php';
 ?>
 	<table width="100%" border="0" cellspacing="0" cellpadding="0">
     	<tr>
@@ -74,4 +50,4 @@ if (isset($_POST['login']) || isset($_POST['password'])) {
         </tr>
     </table>
 
-<? include './templates/footer.php';
+<? include $_SERVER['DOCUMENT_ROOT'] . './templates/footer.php';
