@@ -7,17 +7,17 @@ $menuArr = [
     ],
     [
         'title' => 'О Нас',
-        'path' => '/route/about/about.php',
+        'path' => '/route/about.php',
         'sort' => '20'
     ],
     [
         'title' => 'Новости',
-        'path' => '/route/news/news.php',
+        'path' => '/route/news.php',
         'sort' => '40'
     ],
     [
         'title' => 'Контакты',
-        'path' => '/route/contacts/contacts.php',
+        'path' => '/route/contacts.php',
         'sort' => '30'
     ],
     [
@@ -27,7 +27,7 @@ $menuArr = [
     ],
     [
         'title' => 'Каталог',
-        'path' => '/route/catalogue/catalogue.php',
+        'path' => '/route/catalogue.php',
         'sort' => '50'
     ],
 ];
