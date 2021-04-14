@@ -61,11 +61,11 @@ a.menu-active {
 }
 
 .main-menu li {
+    padding: 0;
+    margin: 0 3px 0 0;
     list-style: none;
     float: left;
     background: url(i/top-menu-bg.gif) bottom repeat-x #efefef;
-    margin: 0 3px 0 0;
-    padding: 0;
 }
 
 .main-menu.bottom {
@@ -78,14 +78,19 @@ a.menu-active {
 }
 
 .main-menu li a {
-    padding: 6px 10px;
+    padding: 9px 10px;
     text-decoration: none;
     display: block;
     color: #999999;
 }
 
+.main-menu.bottom li a {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
 .main-menu li a:hover {
-    padding: 6px 10px;
+    /* padding: 6px 10px; */
     text-decoration: none;
     display: block;
     color: #ffffff;

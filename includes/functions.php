@@ -22,8 +22,8 @@ function arraySort(array $array, $key = 'sort', $sort = SORT_ASC): array
  * @param string проверяемый url
  * @return string
  */
-function isMenuActive ($uri) {
-    return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) === $uri ? 'menu-active' : '';
+function isCurrentUrl ($uri) {
+    return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) === $uri ? true : false;
 }
 
 /**
@@ -56,3 +56,8 @@ function showMenu (array $arr = [], $template = 'header')
     include $_SERVER['DOCUMENT_ROOT'] . './templates/menu.php';
 
 };
+
+function getHeader ($menuArr) {
+    $caption = array_search(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), array_column($menuArr, 'path'));
+    return $menuArr[$caption]['title'];
+}

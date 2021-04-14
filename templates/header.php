@@ -4,8 +4,6 @@
   include $_SERVER['DOCUMENT_ROOT'] . './includes/success.php';
   include $_SERVER['DOCUMENT_ROOT'] . './includes/auth.php';
   include $_SERVER['DOCUMENT_ROOT'] . './includes/functions.php';
-  $pageItemKey = array_search($URL, array_column($menuArr, 'path') );
-  $pageTitle = $menuArr[$pageItemKey]['title'];
 
 ?>
 <!DOCTYPE html>
@@ -27,3 +25,7 @@
         <? showMenu($menuArr) ?>
     </div>
 
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    	<tbody><tr>
+        	<td class="left-collum-index">
+          <h1><?= getHeader($menuArr) ?></h1>
