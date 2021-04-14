@@ -24,6 +24,6 @@
     </div>
 
     <div class="clear">
-        <? include $_SERVER['DOCUMENT_ROOT'] . './templates/menu.php'; ?>
+        <? showMenu($menuArr) ?>
     </div>
 

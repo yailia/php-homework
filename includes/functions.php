@@ -16,8 +16,6 @@ function arraySort(array $array, $key = 'sort', $sort = SORT_ASC): array
     return $array;
 }
 
-$headerMenuArr = arraySort($menuArr, 'sort');
-$footerMenuArr = arraySort($menuArr, 'title', SORT_DESC);
 
 /**
  * возвращает название активного класса, если url совпадает
@@ -46,16 +44,15 @@ function cutString($line, $length = 12, $appends = '...'): string
  * @param array массив пунктов
  */
 
-function showMenu (array $arr = [])
+function showMenu (array $arr = [], $template = 'header')
 {
-    foreach($arr as $item) {
-        ?>
-        <li>
-            <a 
-            class = "<?=isMenuActive($item['path']) ?>"
-            href="<?= $item['path'] ?>">
-            <?= cutstring($item['title']) ?></a>
-        </li>
-        <?php
-    };
+    $menuClass = ($template === 'header') ? 'main-menu' : 'main-menu bottom';
+    if ($template === 'header') {
+        $arr = arraySort($arr);
+    } else {
+        $arr = arraySort($arr, 'title', SORT_DESC);
+    }
+
+    include $_SERVER['DOCUMENT_ROOT'] . './templates/menu.php';
+
 };

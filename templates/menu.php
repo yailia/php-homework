@@ -1,6 +1,6 @@
-<ul class="main-menu">
+<ul class="<?= $menuClass ?>">
 <?php
-foreach($menuArr as $item) {
+foreach($arr as $item) {
   ?>
   <li>
       <a 
